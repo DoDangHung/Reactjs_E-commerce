@@ -1,23 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+/** @format */
+
+import React, { useEffect } from "react";
+import productApi from "./api/productApi";
+import CounterFeature from "./feature/Counter";
+import Header from "./components/Header";
+import NotFound from "./components/NotFound";
+import { Button } from "@mui/material";
+import { useSnackbar } from "notistack";
 
 function App() {
+  // useEffect(() => {
+  //   const fetchProducts = async () => {
+  //     const productList = await productApi.getAll();
+  //     console.log(productList);
+  //   };
+  //   fetchProducts();
+  // }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+
+      <CounterFeature></CounterFeature>
     </div>
   );
 }
